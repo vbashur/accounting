@@ -13,6 +13,9 @@ build/
 .springBeans
 .sts4-cache
 
+### Immutables ###
+src/main/generated/**
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
