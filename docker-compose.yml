@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  accounting:
+    build:
+      context: .
+      target: app
+      dockerfile: ./devops/docker/Dockerfile
+    image: vbashur/accounting
+    restart: always
+    ports:
+      - 8080:8080

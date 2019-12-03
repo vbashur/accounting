@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id "com.github.spacialcircumstances.gradle-cucumber-reporting" version "0.1.14"
+}
+
+group 'com.vbashur'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+//    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: "${jUnitVersion}"
+
+    testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+    testCompile group: 'com.jayway.jsonpath', name: 'json-path-assert', version: '2.4.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-java8', version: '4.8.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '4.8.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '4.8.0' // DI support
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
+    testImplementation group: 'org.json', name: 'json', version: '20190722'
+
+
+    testCompile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+    testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
+}
