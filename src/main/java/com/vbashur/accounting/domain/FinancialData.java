@@ -13,13 +13,14 @@ import org.immutables.value.Value;
 @JsonSerialize(as = ImmutableFinancialData.class)
 @JsonDeserialize(as = ImmutableFinancialData.class)
 @Criteria
-@Criteria.Repository
+//@Criteria.Repository
 public interface FinancialData {
 
-    @Criteria.Id
-    String id();
+//    @Criteria.Id
+//    String id();
 
-    @Value.Parameter
+    //    @Value.Parameter
+//    @Criteria.Id
     @JsonProperty("monthIncome")
     Double monthIncome();
 }

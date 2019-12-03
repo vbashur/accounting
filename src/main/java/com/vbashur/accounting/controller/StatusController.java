@@ -1,5 +1,6 @@
 package com.vbashur.accounting.controller;
 
+import com.vbashur.accounting.domain.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -27,9 +28,20 @@ public class StatusController {
             .put("version", this.version)
             .toString();
 
+
+        String employeeRepresentation = new JSONObject()
+                .put("personalData", new JSONObject().put("name", "employeeName"))
+                .put("financialData", new JSONObject().put("monthIncome", "salary"))
+                .toString();
+        FinancialData fd = ImmutableFinancialData.builder().monthIncome(1.2).build();
+        PersonalData pd = ImmutablePersonalData.builder().name("name").build();
+        Employee e = ImmutableEmployee.builder()
+                .id("id")
+                .financialData(fd).personalData(pd).build();
+
         return ResponseEntity
             .status(HttpStatus.OK)
-            .body(resultBody);
+            .body(resultBody + "\njson\n" + employeeRepresentation + "\n\n\nobject\n" + e.toString());
     }
 
 

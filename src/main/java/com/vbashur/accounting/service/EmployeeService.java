@@ -21,13 +21,19 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public boolean createEmployee(PersonalData personalData, FinancialData financialData) {
-        Employee createdEmployee = ImmutableEmployee.of(personalData, financialData);
-        return createEmployee(createdEmployee);
-    }
+//    public boolean createEmployee(PersonalData personalData, FinancialData financialData) {
+//        Employee createdEmployee = ImmutableEmployee.builder().financialData(f)of(personalData, financialData);
+//        return createEmployee(createdEmployee);
+//    }
 
     public boolean createEmployee(Employee createdEmployee) {
+        System.out.println("createdEmployee count before = " + employeeRepository.findAll().count());
         WriteResult res = employeeRepository.insert(createdEmployee);
+        System.out.println("createdEmployee count after = " + employeeRepository.findAll().count());
+        System.out.println(res.insertedCount());
+                System.out.println(res.deletedCount());
+                        System.out.println(res.updatedCount());
+                                System.out.println(res.totalCount());
         return res.insertedCount().orElse(0)  > 0;
     }
 }

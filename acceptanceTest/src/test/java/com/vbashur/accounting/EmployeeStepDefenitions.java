@@ -26,6 +26,7 @@ public class EmployeeStepDefenitions {
         String employeeRepresentation = new JSONObject()
             .put("personalData", new JSONObject().put("name", employeeName))
             .put("financialData", new JSONObject().put("monthIncome", salary))
+            .put("id", "id")
             .toString();
 
         context.setRequestResponse(given()

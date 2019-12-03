@@ -33,6 +33,13 @@ dependencies {
 	}
 }
 
+configurations {
+	annotationProcessor
+}
+
+compileJava {
+	options.annotationProcessorPath = configurations.annotationProcessor
+}
 test {
 	useJUnitPlatform()
 }

@@ -12,11 +12,12 @@ import org.immutables.value.Value;
 @JsonSerialize(as = ImmutablePersonalData.class)
 @JsonDeserialize(as = ImmutablePersonalData.class)
 @Criteria
-@Criteria.Repository
+//@Criteria.Repository
 public interface PersonalData {
 
-    @Criteria.Id
-    String id();
+//    @Criteria.Id
+//    String id();
 
+//    @Criteria.Id
     String name();
 }
